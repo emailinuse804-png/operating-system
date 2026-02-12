@@ -25,11 +25,14 @@ file "$ISO_PATH"
 
 echo
 echo "== Checking GRUB presence =="
-if ! xorriso -indev "$ISO_PATH" -find /boot/grub/grub.cfg -exec report_lba >/dev/null 2>&1; then
-  echo "ERROR: /boot/grub/grub.cfg not found in ISO." >&2
+if xorriso -indev "$ISO_PATH" -find /boot/grub/grub.cfg -exec report_lba >/dev/null 2>&1; then
+  echo "Found /boot/grub/grub.cfg"
+elif xorriso -indev "$ISO_PATH" -find /boot/grub/menu.lst -exec report_lba >/dev/null 2>&1; then
+  echo "Found /boot/grub/menu.lst"
+else
+  echo "ERROR: no GRUB menu file found in /boot/grub." >&2
   exit 1
 fi
-echo "Found /boot/grub/grub.cfg"
 
 echo
 echo "== Checking live root filesystem =="
