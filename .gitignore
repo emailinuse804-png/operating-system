@@ -4,8 +4,11 @@ dist/
 live-build/.build/
 live-build/.cache/
 live-build/binary/
+live-build/binary.packages
 live-build/cache/
 live-build/chroot/
+live-build/chroot.headers
+live-build/chroot.packages.*
 live-build/config/binary
 live-build/config/bootstrap
 live-build/config/chroot
