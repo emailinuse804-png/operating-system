@@ -28,7 +28,7 @@ echo
 
 echo "- Virtualization support:"
 for svc in vboxservice qemu-guest-agent; do
-  if systemctl list-unit-files | rg -q "^${svc}\.service"; then
+  if systemctl list-unit-files | grep -q "^${svc}\.service"; then
     echo "  [OK] ${svc}.service available"
   else
     echo "  [INFO] ${svc}.service not found"
