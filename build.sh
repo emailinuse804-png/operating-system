@@ -7,6 +7,7 @@ cd "$ROOT_DIR"
 DISTRO="${DISTRO:-bookworm}"
 ARCH="${ARCH:-amd64}"
 ISO_LABEL="${ISO_LABEL:-SLEEK_OS_X64}"
+SECURITY_REPO="${SECURITY_REPO:-false}"
 
 if [[ "${EUID}" -ne 0 ]]; then
   echo "build.sh requires root privileges." >&2
@@ -55,7 +56,7 @@ lb config \
   --mirror-binary "http://deb.debian.org/debian/" \
   --mirror-chroot-security "http://security.debian.org/debian-security/" \
   --mirror-binary-security "http://security.debian.org/debian-security/" \
-  --security true \
+  --security "$SECURITY_REPO" \
   --iso-application "SleekOS x64" \
   --iso-publisher "SleekOS Project" \
   --iso-volume "$ISO_LABEL" \

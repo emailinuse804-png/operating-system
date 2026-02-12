@@ -60,6 +60,14 @@ Build logs are written to `build.log`.
 
 Expected output file is an ISO in the repository root (for example, `live-image-amd64.hybrid.iso`).
 
+By default, `SECURITY_REPO=false` is used for compatibility with older live-build
+versions that still generate the deprecated `bookworm/updates` security path.
+If your live-build version supports modern security suites, you can enable it:
+
+```bash
+sudo SECURITY_REPO=true ./build.sh
+```
+
 ---
 
 ## Verify ISO structure
