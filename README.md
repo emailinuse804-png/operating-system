@@ -30,7 +30,7 @@ The output is a bootable ISO for testing in Oracle VM VirtualBox.
   - `spice-vdagent`
 - **Boot/ISO**
   - `amd64` target
-  - `iso-hybrid` image type
+  - `iso` image type
   - GRUB configured in live-build options
 
 ---

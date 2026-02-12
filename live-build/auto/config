@@ -9,7 +9,7 @@ lb config noauto \
   --mirror-bootstrap "http://archive.ubuntu.com/ubuntu/" \
   --mirror-chroot "http://archive.ubuntu.com/ubuntu/" \
   --mirror-chroot-security "http://security.ubuntu.com/ubuntu/" \
-  --binary-images iso-hybrid \
+  --binary-images iso \
   --bootloader grub2 \
   --debian-installer false \
   --linux-flavours generic \
