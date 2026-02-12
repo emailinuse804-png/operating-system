@@ -2,6 +2,7 @@ auto/
 cache/
 chroot/
 binary/
+.build/
 build.log
 *.iso
 *.img
@@ -11,4 +12,11 @@ build.log
 *.contents
 *.filesystem*
 *.tar
+*.zsync*
+chroot.*
+config/binary
+config/bootstrap
+config/chroot
+config/common
+config/source
 tmp/
