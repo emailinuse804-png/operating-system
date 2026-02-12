@@ -42,7 +42,7 @@ Use Debian/Ubuntu host (or equivalent container/VM) and install:
 sudo apt-get update
 sudo apt-get install -y \
   live-build debootstrap xorriso squashfs-tools \
-  grub-pc-bin grub-efi-amd64-bin mtools dosfstools syslinux-utils
+  grub-pc-bin grub-efi-amd64-bin mtools dosfstools
 ```
 
 ---
@@ -58,7 +58,7 @@ sudo ./build.sh
 
 Build logs are written to `build.log`.
 
-Expected output file is an ISO in the repository root (for example, `live-image-amd64.hybrid.iso`).
+Expected output file is an ISO in the repository root (for example, `live-image-amd64.iso` or `binary.iso`).
 
 By default, `SECURITY_REPO=false` is used for compatibility with older live-build
 versions that still generate the deprecated `bookworm/updates` security path.
@@ -73,7 +73,7 @@ sudo SECURITY_REPO=true ./build.sh
 ## Verify ISO structure
 
 ```bash
-./scripts/verify_iso.sh ./live-image-amd64.hybrid.iso
+./scripts/verify_iso.sh ./live-image-amd64.iso
 ```
 
 The checker confirms:

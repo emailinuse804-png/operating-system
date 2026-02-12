@@ -20,7 +20,6 @@ required_tools=(
   debootstrap
   xorriso
   mksquashfs
-  isohybrid
 )
 
 missing=()
@@ -33,7 +32,7 @@ done
 if ((${#missing[@]} > 0)); then
   echo "Missing required tools: ${missing[*]}" >&2
   echo "Install on Debian/Ubuntu with:" >&2
-  echo "  sudo apt-get update && sudo apt-get install -y live-build debootstrap xorriso squashfs-tools grub-pc-bin grub-efi-amd64-bin mtools dosfstools syslinux-utils" >&2
+  echo "  sudo apt-get update && sudo apt-get install -y live-build debootstrap xorriso squashfs-tools grub-pc-bin grub-efi-amd64-bin mtools dosfstools" >&2
   exit 1
 fi
 
@@ -45,7 +44,7 @@ lb config \
   --mode debian \
   --distribution "$DISTRO" \
   --architectures "$ARCH" \
-  --binary-images iso-hybrid \
+  --binary-images iso \
   --archive-areas "main contrib non-free non-free-firmware" \
   --bootappend-live "boot=live components username=sleek hostname=sleekos quiet splash" \
   --bootloader grub \
