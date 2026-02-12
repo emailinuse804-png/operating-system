@@ -48,7 +48,7 @@ lb config \
   --archive-areas "main contrib non-free non-free-firmware" \
   --bootappend-live "boot=live components username=sleek hostname=sleekos quiet splash" \
   --bootloader grub \
-  --debian-installer none \
+  --debian-installer false \
   --firmware-binary true \
   --firmware-chroot true \
   --mirror-bootstrap "http://deb.debian.org/debian/" \
