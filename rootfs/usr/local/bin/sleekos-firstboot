@@ -1,0 +1,51 @@
+#!/bin/bash
+###############################################################################
+# SleekOS First Boot Setup
+# Runs once on first login to configure user environment
+###############################################################################
+
+FIRSTBOOT_FLAG="$HOME/.config/sleekos-firstboot-done"
+
+# Only run once
+if [[ -f "$FIRSTBOOT_FLAG" ]]; then
+    exit 0
+fi
+
+# ─── Create XDG directories ────────────────────────────────────────────────
+xdg-user-dirs-update 2>/dev/null || true
+
+# ─── Set wallpaper ──────────────────────────────────────────────────────────
+if command -v nitrogen &>/dev/null; then
+    nitrogen --set-zoom-fill /usr/share/sleekos/wallpapers/default.svg 2>/dev/null || true
+fi
+
+# ─── Show welcome notification ─────────────────────────────────────────────
+if command -v notify-send &>/dev/null; then
+    sleep 3
+    notify-send "Welcome to SleekOS!" \
+        "Your desktop is ready.\n\nPress Super to open the Start Menu.\nPress Super+A for AI Assistant." \
+        --icon=dialog-information \
+        --urgency=normal
+fi
+
+# ─── Try to install Ollama if not present ──────────────────────────────────
+if ! command -v ollama &>/dev/null; then
+    if [[ -f /usr/local/bin/ollama-setup ]]; then
+        # Don't block the desktop, run in background
+        nohup bash -c '
+            sleep 10
+            /usr/local/bin/ollama-setup 2>/dev/null
+            if command -v notify-send &>/dev/null; then
+                notify-send "Ollama Installed" \
+                    "Run: ollama pull llama3.2\nThen launch SleekAI!" \
+                    --icon=dialog-information
+            fi
+        ' &>/dev/null &
+    fi
+fi
+
+# ─── Mark as done ──────────────────────────────────────────────────────────
+mkdir -p "$(dirname "$FIRSTBOOT_FLAG")"
+touch "$FIRSTBOOT_FLAG"
+
+exit 0

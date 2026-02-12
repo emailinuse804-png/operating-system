@@ -1,0 +1,213 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# SleekOS Tint2 Panel Configuration
+# Windows 11-style taskbar at the bottom
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ─── Panel ────────────────────────────────────────────────────────────────
+panel_items = LTSCBE
+panel_size = 100% 44
+panel_margin = 0 0
+panel_padding = 8 0 6
+panel_background_id = 1
+panel_position = bottom center horizontal
+panel_layer = top
+panel_monitor = all
+panel_shrink = 0
+panel_dock = 0
+autohide = 0
+autohide_show_timeout = 0.3
+autohide_hide_timeout = 1.5
+autohide_height = 4
+strut_policy = follow_size
+panel_window_name = tint2
+
+# ─── Backgrounds ─────────────────────────────────────────────────────────
+
+# Background 1: Panel background (dark, semi-transparent)
+rounded = 0
+border_width = 0
+border_sides = T
+background_color = #11111b 92
+border_color = #45475a 60
+background_color_hover = #11111b 92
+border_color_hover = #45475a 60
+background_color_pressed = #11111b 92
+border_color_pressed = #45475a 60
+
+# Background 2: Active task
+rounded = 8
+border_width = 0
+border_sides = TBLR
+background_color = #89b4fa 25
+border_color = #89b4fa 40
+background_color_hover = #89b4fa 35
+border_color_hover = #89b4fa 50
+background_color_pressed = #89b4fa 45
+border_color_pressed = #89b4fa 60
+
+# Background 3: Default task
+rounded = 8
+border_width = 0
+border_sides = TBLR
+background_color = #000000 0
+border_color = #000000 0
+background_color_hover = #cdd6f4 12
+border_color_hover = #cdd6f4 0
+background_color_pressed = #cdd6f4 20
+border_color_pressed = #cdd6f4 0
+
+# Background 4: Urgent task
+rounded = 8
+border_width = 2
+border_sides = B
+background_color = #f38ba8 15
+border_color = #f38ba8 80
+background_color_hover = #f38ba8 25
+border_color_hover = #f38ba8 90
+background_color_pressed = #f38ba8 35
+border_color_pressed = #f38ba8 100
+
+# Background 5: Tooltip
+rounded = 8
+border_width = 1
+border_sides = TBLR
+background_color = #1e1e2e 95
+border_color = #45475a 80
+
+# Background 6: Clock
+rounded = 8
+border_width = 0
+border_sides = TBLR
+background_color = #000000 0
+border_color = #000000 0
+background_color_hover = #cdd6f4 12
+border_color_hover = #cdd6f4 0
+
+# Background 7: Launcher button
+rounded = 10
+border_width = 0
+border_sides = TBLR
+background_color = #89b4fa 20
+border_color = #89b4fa 0
+background_color_hover = #89b4fa 35
+border_color_hover = #89b4fa 50
+background_color_pressed = #89b4fa 50
+border_color_pressed = #89b4fa 60
+
+# ─── Launcher (Start Menu Area) ─────────────────────────────────────────
+launcher_padding = 4 4 4
+launcher_background_id = 0
+launcher_icon_background_id = 7
+launcher_icon_size = 28
+launcher_icon_asb = 100 0 0
+launcher_icon_theme = Papirus-Dark
+launcher_icon_theme_override = 0
+startup_notifications = 1
+launcher_tooltip = 1
+
+# Start menu launcher
+launcher_item_app = /usr/local/share/applications/sleekos-start.desktop
+
+# ─── Taskbar ─────────────────────────────────────────────────────────────
+taskbar_mode = single_desktop
+taskbar_hide_if_empty = 0
+taskbar_padding = 4 2 4
+taskbar_background_id = 0
+taskbar_active_background_id = 0
+taskbar_name = 0
+taskbar_hide_inactive_tasks = 0
+taskbar_hide_different_monitor = 0
+taskbar_hide_different_desktop = 0
+taskbar_always_show_all_desktop_tasks = 0
+taskbar_name_padding = 4 2
+taskbar_name_background_id = 0
+taskbar_name_active_background_id = 0
+taskbar_name_font_color = #cdd6f4 80
+taskbar_name_active_font_color = #89b4fa 100
+taskbar_distribute_size = 0
+taskbar_sort_order = title
+task_align = left
+
+# ─── Tasks ───────────────────────────────────────────────────────────────
+task_text = 1
+task_icon = 1
+task_centered = 1
+urgent_nb_of_blink = 20
+task_maximum_size = 200 40
+task_padding = 8 4 4
+task_font = Noto Sans 10
+task_tooltip = 1
+task_thumbnail = 1
+task_thumbnail_size = 210
+
+# Normal task
+task_background_id = 3
+task_font_color = #cdd6f4 80
+task_icon_asb = 100 0 0
+
+# Active task
+task_active_background_id = 2
+task_active_font_color = #cdd6f4 100
+task_active_icon_asb = 100 0 0
+
+# Urgent task
+task_urgent_background_id = 4
+task_urgent_font_color = #f38ba8 100
+task_urgent_icon_asb = 100 0 0
+
+# Iconified task
+task_iconified_background_id = 3
+task_iconified_font_color = #585b70 80
+task_iconified_icon_asb = 100 0 -20
+
+# ─── System Tray ─────────────────────────────────────────────────────────
+systray_padding = 4 2 4
+systray_background_id = 0
+systray_sort = ascending
+systray_icon_size = 20
+systray_icon_asb = 100 0 0
+systray_monitor = primary
+systray_name_filter =
+
+# ─── Clock ───────────────────────────────────────────────────────────────
+time1_format = %I:%M %p
+time1_timezone =
+time1_font = Noto Sans Bold 11
+time2_format = %a %b %d
+time2_timezone =
+time2_font = Noto Sans 8
+clock_font_color = #cdd6f4 100
+clock_padding = 8 0
+clock_background_id = 6
+clock_tooltip = %A, %B %d, %Y
+clock_lclick_command = 
+clock_rclick_command = 
+clock_mclick_command =
+clock_uwheel_command =
+clock_dwheel_command =
+
+# ─── Battery ─────────────────────────────────────────────────────────────
+battery_padding = 4 2
+battery_background_id = 0
+battery_hide = 96
+battery_font_color = #cdd6f4 100
+battery_font = Noto Sans 9
+bat1_format = %p%
+bat2_format = %t
+
+# ─── Executor (Custom widgets) ──────────────────────────────────────────
+
+# ─── Tooltip ─────────────────────────────────────────────────────────────
+tooltip_show_timeout = 0.5
+tooltip_hide_timeout = 0.3
+tooltip_padding = 8 6
+tooltip_background_id = 5
+tooltip_font_color = #cdd6f4 100
+tooltip_font = Noto Sans 10
+
+# ─── Mouse Actions ──────────────────────────────────────────────────────
+mouse_left = toggle_iconify
+mouse_middle = none
+mouse_right = close
+mouse_scroll_up = toggle_shade
+mouse_scroll_down = iconify

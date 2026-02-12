@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=SleekOS Welcome
+Comment=Welcome screen for SleekOS
+Exec=/usr/local/bin/sleekos-welcome
+Terminal=false
+Hidden=false
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
+OnlyShowIn=SleekOS;

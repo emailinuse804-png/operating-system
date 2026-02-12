@@ -1,0 +1,123 @@
+# SleekOS Package List
+# Core packages for a Windows-like desktop experience
+
+# ─── Kernel & Boot ──────────────────────────────────────────────────────────
+linux-image-amd64
+linux-headers-amd64
+firmware-linux-free
+grub-pc
+grub-efi-amd64
+
+# ─── System Core ────────────────────────────────────────────────────────────
+systemd
+systemd-sysv
+dbus
+udev
+sudo
+bash
+coreutils
+util-linux
+procps
+net-tools
+iproute2
+wpasupplicant
+network-manager
+pulseaudio
+alsa-utils
+
+# ─── Xorg Display Server ───────────────────────────────────────────────────
+xorg
+xserver-xorg
+xserver-xorg-video-all
+xserver-xorg-input-all
+xinit
+x11-xserver-utils
+x11-utils
+xdg-utils
+xdg-user-dirs
+
+# ─── Window Manager & Desktop ──────────────────────────────────────────────
+openbox
+obconf
+picom
+tint2
+rofi
+nitrogen
+lxpolkit
+dunst
+xfce4-power-manager
+light
+
+# ─── Display Manager ───────────────────────────────────────────────────────
+lightdm
+lightdm-gtk-greeter
+
+# ─── File Manager ──────────────────────────────────────────────────────────
+pcmanfm
+gvfs
+gvfs-backends
+tumbler
+
+# ─── Terminal & Editor ──────────────────────────────────────────────────────
+sakura
+mousepad
+nano
+vim-tiny
+
+# ─── Web Browser ───────────────────────────────────────────────────────────
+firefox-esr
+
+# ─── Theming & Appearance ──────────────────────────────────────────────────
+lxappearance
+gtk2-engines-murrine
+gtk2-engines-pixbuf
+papirus-icon-theme
+fonts-noto
+fonts-noto-color-emoji
+fonts-liberation2
+fonts-dejavu-core
+fonts-roboto
+adwaita-icon-theme
+gnome-themes-extra
+
+# ─── System Utilities ──────────────────────────────────────────────────────
+htop
+neofetch
+curl
+wget
+git
+unzip
+zip
+p7zip-full
+gparted
+gnome-disk-utility
+baobab
+gnome-screenshot
+xclip
+
+# ─── Media ──────────────────────────────────────────────────────────────────
+vlc
+eog
+evince
+
+# ─── Networking ─────────────────────────────────────────────────────────────
+nm-tray
+openssh-client
+ca-certificates
+
+# ─── Python (for custom scripts) ───────────────────────────────────────────
+python3
+python3-pip
+python3-gi
+python3-gi-cairo
+gir1.2-gtk-3.0
+gir1.2-webkit2-4.1
+
+# ─── VirtualBox Guest Additions ─────────────────────────────────────────────
+virtualbox-guest-utils
+virtualbox-guest-x11
+
+# ─── Live System ────────────────────────────────────────────────────────────
+live-boot
+live-config
+live-config-systemd

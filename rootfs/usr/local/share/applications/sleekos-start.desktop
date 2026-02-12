@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Start
+Comment=SleekOS Start Menu
+Icon=start-here
+Exec=rofi -show drun -theme sleekos
+Terminal=false

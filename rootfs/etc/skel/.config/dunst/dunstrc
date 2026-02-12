@@ -1,0 +1,92 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# SleekOS Dunst Notification Configuration
+# Windows 11-style notification popups
+# ═══════════════════════════════════════════════════════════════════════════
+
+[global]
+    # ─── Display ─────────────────────────────────────────────────────────
+    monitor = 0
+    follow = mouse
+    width = 380
+    height = 120
+    origin = top-right
+    offset = 12x56
+    scale = 0
+    notification_limit = 5
+
+    # ─── Progress Bar ────────────────────────────────────────────────────
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 360
+
+    # ─── Appearance ──────────────────────────────────────────────────────
+    transparency = 8
+    separator_height = 2
+    padding = 16
+    horizontal_padding = 16
+    text_icon_padding = 16
+    frame_width = 1
+    frame_color = "#45475a"
+    gap_size = 8
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+    corner_radius = 12
+
+    # ─── Font ────────────────────────────────────────────────────────────
+    font = Noto Sans 11
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    # ─── Icons ───────────────────────────────────────────────────────────
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus-Dark
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 64
+
+    # ─── History ─────────────────────────────────────────────────────────
+    sticky_history = yes
+    history_length = 20
+
+    # ─── Actions ─────────────────────────────────────────────────────────
+    dmenu = /usr/bin/rofi -dmenu -theme sleekos
+    browser = /usr/bin/firefox-esr
+    always_run_script = true
+
+    # ─── Mouse ───────────────────────────────────────────────────────────
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#45475a"
+    timeout = 5
+    highlight = "#89b4fa"
+
+[urgency_normal]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#89b4fa"
+    timeout = 8
+    highlight = "#89b4fa"
+
+[urgency_critical]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#f38ba8"
+    timeout = 0
+    highlight = "#f38ba8"

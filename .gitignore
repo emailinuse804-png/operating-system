@@ -1,0 +1,16 @@
+# Build artifacts
+build/
+output/
+*.iso
+*.squashfs
+*.img
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
