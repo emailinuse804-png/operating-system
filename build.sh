@@ -8,6 +8,12 @@ DISTRO="${DISTRO:-bookworm}"
 ARCH="${ARCH:-amd64}"
 ISO_LABEL="${ISO_LABEL:-SLEEK_OS_X64}"
 
+if [[ "${EUID}" -ne 0 ]]; then
+  echo "build.sh requires root privileges." >&2
+  echo "Re-run with: sudo ./build.sh" >&2
+  exit 1
+fi
+
 required_tools=(
   lb
   debootstrap
@@ -44,6 +50,12 @@ lb config \
   --debian-installer none \
   --firmware-binary true \
   --firmware-chroot true \
+  --mirror-bootstrap "http://deb.debian.org/debian/" \
+  --mirror-chroot "http://deb.debian.org/debian/" \
+  --mirror-binary "http://deb.debian.org/debian/" \
+  --mirror-chroot-security "http://security.debian.org/debian-security/" \
+  --mirror-binary-security "http://security.debian.org/debian-security/" \
+  --security true \
   --iso-application "SleekOS x64" \
   --iso-publisher "SleekOS Project" \
   --iso-volume "$ISO_LABEL" \

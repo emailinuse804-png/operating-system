@@ -53,7 +53,7 @@ From repo root:
 
 ```bash
 chmod +x build.sh clean.sh scripts/verify_iso.sh
-./build.sh
+sudo ./build.sh
 ```
 
 Build logs are written to `build.log`.
