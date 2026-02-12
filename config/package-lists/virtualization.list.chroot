@@ -1,4 +1,3 @@
-virtualbox-guest-utils
-virtualbox-guest-x11
 spice-vdagent
 qemu-guest-agent
+mesa-utils
