@@ -23,6 +23,7 @@ $SUDO apt-get install -y \
   live-build \
   mtools \
   squashfs-tools \
+  syslinux-utils \
   xorriso
 
 echo "[+] Dependencies installed."

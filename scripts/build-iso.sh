@@ -23,6 +23,12 @@ if ! command -v lb >/dev/null 2>&1; then
   exit 1
 fi
 
+if ! command -v isohybrid >/dev/null 2>&1; then
+  echo "isohybrid is not installed." >&2
+  echo "Run: ./scripts/install-build-deps.sh (installs syslinux-utils)." >&2
+  exit 1
+fi
+
 if [[ "${EUID}" -ne 0 ]]; then
   if ! command -v sudo >/dev/null 2>&1; then
     echo "Building an ISO requires root privileges (sudo not found)." >&2

@@ -5,6 +5,7 @@ live-build/.build/
 live-build/.cache/
 live-build/binary/
 live-build/binary.packages
+live-build/binary.contents
 live-build/cache/
 live-build/chroot/
 live-build/chroot.headers
