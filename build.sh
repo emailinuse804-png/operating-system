@@ -57,7 +57,7 @@ lb config \
   --mirror-chroot-security "http://security.debian.org/debian-security/" \
   --mirror-binary-security "http://security.debian.org/debian-security/" \
   --security "$SECURITY_REPO" \
-  --linux-packages "linux-image-amd64" \
+  --linux-packages "none" \
   --iso-application "SleekOS x64" \
   --iso-publisher "SleekOS Project" \
   --iso-volume "$ISO_LABEL"
