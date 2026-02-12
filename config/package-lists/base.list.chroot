@@ -2,6 +2,7 @@ live-boot
 live-config
 systemd-sysv
 linux-image-amd64
+syslinux-utils
 sudo
 curl
 wget
