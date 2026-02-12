@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+URL="http://127.0.0.1:11434"
+
+if ! command -v xdg-open >/dev/null 2>&1; then
+  echo "xdg-open is not available." >&2
+  exit 1
+fi
+
+if command -v systemctl >/dev/null 2>&1; then
+  if systemctl is-active --quiet ollama.service; then
+    :
+  elif systemctl list-unit-files ollama.service >/dev/null 2>&1; then
+    echo "[*] Starting Ollama service..."
+    sudo systemctl start ollama.service || true
+  fi
+fi
+
+xdg-open "${URL}" >/dev/null 2>&1 &
+echo "Opened ${URL} in your default browser."

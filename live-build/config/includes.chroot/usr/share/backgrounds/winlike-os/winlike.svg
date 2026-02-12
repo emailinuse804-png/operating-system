@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="1920"
+  height="1080"
+  viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1f44"/>
+      <stop offset="100%" stop-color="#123d87"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7ec8ff" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#2a8fff" stop-opacity="0.65"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <g opacity="0.93">
+    <rect x="560" y="210" width="800" height="660" fill="url(#glass)"/>
+    <line x1="960" y1="210" x2="960" y2="870" stroke="#d8f0ff" stroke-width="12"/>
+    <line x1="560" y1="540" x2="1360" y2="540" stroke="#d8f0ff" stroke-width="12"/>
+  </g>
+
+  <g opacity="0.30" fill="#ffffff">
+    <circle cx="220" cy="180" r="120"/>
+    <circle cx="1730" cy="920" r="150"/>
+    <circle cx="1550" cy="220" r="90"/>
+  </g>
+</svg>

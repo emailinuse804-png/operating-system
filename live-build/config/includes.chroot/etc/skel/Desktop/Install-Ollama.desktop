@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Install Ollama
+Comment=Install local Ollama runtime
+Exec=gnome-terminal -- bash -lc "sudo /usr/local/bin/install-ollama; echo; read -n 1 -s -r -p 'Press any key to close...'"
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;Development;AI;

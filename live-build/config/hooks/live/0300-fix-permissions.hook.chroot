@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+chmod 0755 /usr/local/bin/install-ollama
+chmod 0755 /usr/local/bin/open-ollama-browser
+chmod 0755 /etc/skel/Desktop/Install-Ollama.desktop
+chmod 0755 /etc/skel/Desktop/Open-Ollama-API.desktop

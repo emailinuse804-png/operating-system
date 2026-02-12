@@ -1,0 +1,12 @@
+[org/cinnamon/theme]
+name='Mint-Y-Dark-Blue'
+
+[org/cinnamon/desktop/interface]
+gtk-theme='Arc-Darker'
+icon-theme='Papirus-Dark'
+cursor-theme='DMZ-White'
+clock-use-24h=true
+
+[org/cinnamon/desktop/background]
+picture-uri='file:///usr/share/backgrounds/winlike-os/winlike.svg'
+picture-options='zoom'

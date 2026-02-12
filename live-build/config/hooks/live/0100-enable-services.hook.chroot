@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+systemctl enable NetworkManager.service || true
+systemctl enable lightdm.service || true

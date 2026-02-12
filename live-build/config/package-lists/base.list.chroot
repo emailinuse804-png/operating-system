@@ -1,0 +1,10 @@
+ca-certificates
+curl
+git
+gnupg
+network-manager
+network-manager-gnome
+pipewire
+sudo
+wireplumber
+wget

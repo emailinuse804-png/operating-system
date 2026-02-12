@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ "${EUID}" -ne 0 ]]; then
+  if command -v sudo >/dev/null 2>&1; then
+    exec sudo "$0" "$@"
+  fi
+  echo "Run as root or install sudo first." >&2
+  exit 1
+fi
+
+if command -v ollama >/dev/null 2>&1; then
+  echo "Ollama is already installed."
+  exit 0
+fi
+
+if ! command -v curl >/dev/null 2>&1; then
+  echo "curl is required to install Ollama." >&2
+  exit 1
+fi
+
+echo "[*] Installing Ollama from the official installer..."
+curl -fsSL https://ollama.com/install.sh | sh
+
+echo "[*] Enabling Ollama service..."
+systemctl enable ollama.service || true
+systemctl start ollama.service || true
+
+echo "[+] Ollama installation complete."
