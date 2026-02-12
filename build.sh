@@ -40,7 +40,7 @@ lb config \
   --binary-images iso-hybrid \
   --archive-areas "main contrib non-free non-free-firmware" \
   --bootappend-live "boot=live components username=sleek hostname=sleekos quiet splash" \
-  --bootloaders "grub-efi,grub-pc" \
+  --bootloader grub \
   --debian-installer none \
   --firmware-binary true \
   --firmware-chroot true \
