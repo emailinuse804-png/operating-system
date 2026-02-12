@@ -6,5 +6,6 @@ network-manager
 network-manager-gnome
 pipewire
 sudo
+syslinux-utils
 wireplumber
 wget
