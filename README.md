@@ -44,7 +44,6 @@ scripts/
 
 live-build/
   auto/config             # live-build config (amd64 + grub + ubuntu noble)
-  auto/clean
   config/package-lists/   # package sets
   config/hooks/live/      # chroot hooks
   config/includes.chroot/ # files copied into final live system
@@ -68,6 +67,12 @@ Install dependencies:
 
 ```bash
 ./scripts/build-iso.sh
+```
+
+Quick configuration validation (no full ISO build):
+
+```bash
+./scripts/build-iso.sh --dry-run
 ```
 
 Result:

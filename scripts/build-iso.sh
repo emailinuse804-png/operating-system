@@ -6,6 +6,11 @@ PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 LIVE_BUILD_DIR="${PROJECT_ROOT}/live-build"
 DIST_DIR="${PROJECT_ROOT}/dist"
 ISO_NAME="winlike-os-amd64.iso"
+DRY_RUN=false
+
+if [[ "${1:-}" == "--dry-run" ]]; then
+  DRY_RUN=true
+fi
 
 if [[ ! -d "${LIVE_BUILD_DIR}" ]]; then
   echo "Missing live-build directory: ${LIVE_BUILD_DIR}" >&2
@@ -36,6 +41,11 @@ $SUDO lb clean --purge
 
 echo "[*] Generating live-build configuration..."
 ./auto/config
+
+if [[ "${DRY_RUN}" == "true" ]]; then
+  echo "[+] Dry-run complete. live-build configuration is valid."
+  exit 0
+fi
 
 echo "[*] Building ISO (this can take a while)..."
 $SUDO lb build
