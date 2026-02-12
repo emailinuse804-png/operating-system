@@ -13,8 +13,6 @@ lb config noauto \
   --bootloader grub \
   --debian-installer false \
   --linux-flavours generic \
-  --firmware-binary true \
-  --firmware-chroot true \
   --apt-recommends true \
   --bootappend-live "boot=live components splash username=operator hostname=winlikeos quiet" \
   "${@}"
