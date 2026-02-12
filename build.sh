@@ -57,10 +57,10 @@ lb config \
   --mirror-chroot-security "http://security.debian.org/debian-security/" \
   --mirror-binary-security "http://security.debian.org/debian-security/" \
   --security "$SECURITY_REPO" \
+  --linux-packages "linux-image-amd64" \
   --iso-application "SleekOS x64" \
   --iso-publisher "SleekOS Project" \
-  --iso-volume "$ISO_LABEL" \
-  --linux-flavours "$ARCH"
+  --iso-volume "$ISO_LABEL"
 
 echo "[3/3] Building ISO (this can take a while)"
 lb build 2>&1 | tee build.log
