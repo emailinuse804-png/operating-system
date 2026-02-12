@@ -1,0 +1,14 @@
+auto/
+cache/
+chroot/
+binary/
+build.log
+*.iso
+*.img
+*.manifest
+*.packages
+*.list
+*.contents
+*.filesystem*
+*.tar
+tmp/

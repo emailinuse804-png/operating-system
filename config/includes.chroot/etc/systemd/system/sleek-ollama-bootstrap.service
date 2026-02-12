@@ -1,0 +1,13 @@
+[Unit]
+Description=Install Ollama on first boot if missing
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=!/var/lib/sleek/ollama-bootstrap.done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/sleek-ollama-bootstrap
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

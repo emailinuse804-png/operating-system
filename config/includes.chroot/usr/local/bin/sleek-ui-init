@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+MARKER="$HOME/.config/.sleek-ui-init.done"
+mkdir -p "$(dirname "$MARKER")"
+
+if [[ -f "$MARKER" ]]; then
+  exit 0
+fi
+
+apply_string() {
+  local channel="$1"
+  local property="$2"
+  local value="$3"
+
+  if xfconf-query -c "$channel" -p "$property" >/dev/null 2>&1; then
+    xfconf-query -c "$channel" -p "$property" -s "$value" >/dev/null 2>&1 || true
+  else
+    xfconf-query -c "$channel" -p "$property" -n -t string -s "$value" >/dev/null 2>&1 || true
+  fi
+}
+
+# Set a clean, Windows-like dark look and modern icon pack.
+apply_string xsettings /Net/ThemeName Arc-Dark
+apply_string xsettings /Net/IconThemeName Papirus-Dark
+apply_string xsettings /Net/CursorThemeName Adwaita
+apply_string xfwm4 /general/theme Default
+apply_string xfwm4 /general/title_font "Sans Bold 10"
+apply_string xfce4-panel /panels/panel-1/position "p=10;x=0;y=0"
+
+touch "$MARKER"
+exit 0

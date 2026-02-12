@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "=== SleekOS runtime check ==="
+echo "Kernel: $(uname -r)"
+echo "Architecture: $(uname -m)"
+echo
+
+echo "- Desktop components:"
+for cmd in startxfce4 xfce4-panel lightdm; do
+  if command -v "$cmd" >/dev/null 2>&1; then
+    echo "  [OK] $cmd"
+  else
+    echo "  [MISSING] $cmd"
+  fi
+done
+echo
+
+echo "- Browser support:"
+for cmd in firefox chromium; do
+  if command -v "$cmd" >/dev/null 2>&1; then
+    echo "  [OK] $cmd"
+  else
+    echo "  [MISSING] $cmd"
+  fi
+done
+echo
+
+echo "- Virtualization support:"
+for svc in vboxservice qemu-guest-agent; do
+  if systemctl list-unit-files | rg -q "^${svc}\.service"; then
+    echo "  [OK] ${svc}.service available"
+  else
+    echo "  [INFO] ${svc}.service not found"
+  fi
+done
+echo
+
+echo "- Ollama:"
+if command -v ollama >/dev/null 2>&1; then
+  echo "  [OK] ollama CLI installed"
+else
+  echo "  [INFO] ollama CLI not installed yet (bootstrap service installs at first boot with internet)"
+fi

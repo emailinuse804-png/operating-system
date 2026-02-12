@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Sleek UI Initializer
+Comment=Apply sleek desktop defaults on first login
+Exec=/usr/local/bin/sleek-ui-init
+OnlyShowIn=XFCE;
+X-GNOME-Autostart-enabled=true
+NoDisplay=true

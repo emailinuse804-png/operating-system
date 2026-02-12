@@ -1,0 +1,11 @@
+firefox-esr
+chromium
+chromium-sandbox
+python3
+python3-pip
+jq
+tmux
+xterm
+mesa-utils
+pciutils
+usbutils

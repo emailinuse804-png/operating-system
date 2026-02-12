@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+chmod +x /usr/local/sbin/sleek-ollama-bootstrap
+chmod +x /usr/local/bin/sleek-ui-init
+chmod +x /usr/local/bin/ollama-chat
+chmod +x /usr/local/bin/sleek-postinstall-check
+
+mkdir -p /var/lib/sleek
+
+mkdir -p /etc/systemd/system/multi-user.target.wants
+ln -sf /etc/systemd/system/sleek-ollama-bootstrap.service \
+  /etc/systemd/system/multi-user.target.wants/sleek-ollama-bootstrap.service

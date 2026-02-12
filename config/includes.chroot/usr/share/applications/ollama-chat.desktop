@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Ollama Chat
+Comment=Start local Ollama and chat in a terminal
+Exec=/usr/local/bin/ollama-chat
+Icon=utilities-terminal
+Terminal=false
+Categories=Utility;Development;Education;

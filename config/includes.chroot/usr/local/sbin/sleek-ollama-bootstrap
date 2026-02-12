@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+STATE_DIR="/var/lib/sleek"
+MARKER_FILE="$STATE_DIR/ollama-bootstrap.done"
+
+mkdir -p "$STATE_DIR"
+
+if command -v ollama >/dev/null 2>&1; then
+  touch "$MARKER_FILE"
+  exit 0
+fi
+
+if ! command -v curl >/dev/null 2>&1; then
+  export DEBIAN_FRONTEND=noninteractive
+  apt-get update
+  apt-get install -y curl ca-certificates
+fi
+
+if curl -fsSL https://ollama.com/install.sh | bash; then
+  if [[ -f /lib/systemd/system/ollama.service ]]; then
+    systemctl enable ollama.service || true
+    systemctl restart ollama.service || true
+  fi
+  touch "$MARKER_FILE"
+  logger -t sleek-ollama "Ollama installed successfully."
+  exit 0
+fi
+
+logger -t sleek-ollama "Ollama installation failed. Will retry next boot."
+exit 1
