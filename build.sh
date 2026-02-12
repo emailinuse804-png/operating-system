@@ -20,6 +20,7 @@ required_tools=(
   debootstrap
   xorriso
   mksquashfs
+  isohybrid
 )
 
 missing=()
@@ -32,7 +33,7 @@ done
 if ((${#missing[@]} > 0)); then
   echo "Missing required tools: ${missing[*]}" >&2
   echo "Install on Debian/Ubuntu with:" >&2
-  echo "  sudo apt-get update && sudo apt-get install -y live-build debootstrap xorriso squashfs-tools grub-pc-bin grub-efi-amd64-bin mtools dosfstools" >&2
+  echo "  sudo apt-get update && sudo apt-get install -y live-build debootstrap xorriso squashfs-tools grub-pc-bin grub-efi-amd64-bin mtools dosfstools syslinux-utils" >&2
   exit 1
 fi
 

@@ -42,7 +42,7 @@ Use Debian/Ubuntu host (or equivalent container/VM) and install:
 sudo apt-get update
 sudo apt-get install -y \
   live-build debootstrap xorriso squashfs-tools \
-  grub-pc-bin grub-efi-amd64-bin mtools dosfstools
+  grub-pc-bin grub-efi-amd64-bin mtools dosfstools syslinux-utils
 ```
 
 ---
